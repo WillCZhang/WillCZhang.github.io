@@ -41,11 +41,11 @@ avatar: assets/images/avatar.png
 markdown: kramdown
 
 # Deployed url
-# baseurl: "/jekyll-theme-prologue" # the subpath of your site, e.g. /blog
-# url: "https://WillCZhang.github.io" # the base hostname & protocol for your site
+baseurl: "/jekyll-theme-prologue" # the subpath of your site, e.g. /blog
+url: "https://WillCZhang.github.io" # the base hostname & protocol for your site
 # Local test
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "" # the base hostname & protocol for your site
 
 # Social settings
 # Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
