@@ -1,0 +1,13 @@
+---
+title: Work Experience
+icon: fa-briefcase
+order: 3
+---
+
+<section class="card">
+  <div class="card-content">
+    <!-- Markdown Content -->
+    {% capture my_include %}{% include portfolio/work-experience.md %}{% endcapture %}
+    {{ my_include | markdownify }}
+  </div>
+</section>
