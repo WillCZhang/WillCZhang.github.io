@@ -41,7 +41,7 @@ avatar: assets/images/avatar.png
 markdown: kramdown
 
 # Deployed url
-baseurl: "/jekyll-theme-prologue" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://WillCZhang.github.io" # the base hostname & protocol for your site
 # Local test
 # baseurl: "" # the subpath of your site, e.g. /blog
@@ -63,5 +63,5 @@ dribbble_url:
 google_analytics: UA-146431467-1
 
 # The following settings are NECESSARY for the Prologue theme to run:
-theme: jekyll-theme-prologue
+# theme: jekyll-theme-prologue
 collections: [sections]
