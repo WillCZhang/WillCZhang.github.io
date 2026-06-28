@@ -1,0 +1,34 @@
+name: Update page structure
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  execute-script:
+    runs-on: ubuntu-latest
+    # Optional: Only run if the issue title or body matches your format 
+    # Example: Title must start with "[REQUEST]:"
+    if: startsWith(github.event.issue.title, '[Automation]')
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Script Environment
+        # If your script is Python/Node, set up the runtime here. 
+        # For a standard Bash script, you can skip this step.
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Make Script Executable
+        # Ensures your repository script has permission to run
+        run: chmod +x ./scripts/update-web.js
+
+      - name: Run Script with Issue Data
+        # Pass issue data into your script via Environment Variables
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: ./scripts/update-web.js
