@@ -31,7 +31,7 @@ jobs:
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: ./scripts/update-web.js
+        run: node ./scripts/update-web.js
 
       - name: Commit and Push Changes
         run: |
