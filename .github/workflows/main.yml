@@ -24,7 +24,9 @@ jobs:
 
       - name: Make Script Executable
         # Ensures your repository script has permission to run
-        run: chmod +x ./scripts/update-web.js
+        run: |
+          chmod +x ./scripts/update-web.js
+          chmod +x ./scripts/commit-and-push.sh
 
       - name: Run Script with Issue Data
         # Pass issue data into your script via Environment Variables
@@ -34,11 +36,11 @@ jobs:
         run: node ./scripts/update-web.js
 
       - name: Commit and Push Changes
+        run: ./scripts/commit-and-push.sh
+
+      - name: Close Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          git add .
-          
-          git diff-index --quiet HEAD || git commit -m "chore: update static asset from issue #${{ github.event.issue.number }}"
-          git push
+          gh issue close "$ISSUE_NUMBER" --comment "Automation completed successfully! This issue is now closed."
