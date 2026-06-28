@@ -20,7 +20,7 @@ jobs:
         # For a standard Bash script, you can skip this step.
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Make Script Executable
         # Ensures your repository script has permission to run
