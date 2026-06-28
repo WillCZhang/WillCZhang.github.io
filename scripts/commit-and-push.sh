@@ -5,7 +5,7 @@ git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
 git add .
 
-git diff-index --quiet HEAD || git commit -m "chore: update static asset from issue #${{ github.event.issue.number }}"
+git commit -m "chore: update static asset from issue #$ISSUE_NUMBER"
 
 MAX_SLEEP=10
 

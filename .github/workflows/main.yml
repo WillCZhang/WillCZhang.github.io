@@ -36,6 +36,8 @@ jobs:
         run: node ./scripts/update-web.js
 
       - name: Commit and Push Changes
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: ./scripts/commit-and-push.sh
 
       - name: Close Issue
